@@ -3,7 +3,6 @@
 - components
 - pages
 - other folder: lib, utils ...
-- instal react-route-dom
 
 # SET-UP YOUR DATABASE
 
