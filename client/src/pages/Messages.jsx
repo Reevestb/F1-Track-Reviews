@@ -13,7 +13,9 @@ export default function Message() {
   // we need useEffect to fetch the data
   useEffect(() => {
     async function fetchMessages() {
-      const response = await fetch("http://localhost:7430/userMsg");
+      const response = await fetch(
+        "https://week-7-assignment.onrender.com/userMsg"
+      );
       const data = await response.json();
       setUserMsg(data);
       // console.log(userMsg);

@@ -18,7 +18,7 @@ export default function Form() {
     event.preventDefault();
     //prevent default to stop data going to url
     //something that Fetches the POST endpoint
-    fetch("http://localhost:7430/formInputs", {
+    fetch("https://week-7-assignment.onrender.com/formInputs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,9 @@ export default function Form() {
   }
   useEffect(() => {
     async function fetchCategories() {
-      const response = await fetch("http://localhost:7430/categoryItems");
+      const response = await fetch(
+        "https://week-7-assignment.onrender.com/categoryItems"
+      );
       const category = await response.json();
       setCategory(category);
     }

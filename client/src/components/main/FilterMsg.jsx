@@ -8,7 +8,9 @@ export default function FilterMsg() {
 
   useEffect(() => {
     async function fetchMessages() {
-      const response = await fetch("http://localhost:7430/trackNames");
+      const response = await fetch(
+        "https://week-7-assignment.onrender.com/trackNames"
+      );
       const data = await response.json();
       setCategory(data);
     }
