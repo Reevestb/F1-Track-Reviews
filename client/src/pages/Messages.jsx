@@ -14,7 +14,7 @@ export default function Message() {
   useEffect(() => {
     async function fetchMessages() {
       const response = await fetch(
-        "https://week-7-assignment.onrender.com/userMsg"
+        "https://week-7-assignment-client.onrender.com/userMsg"
       );
       const data = await response.json();
       setUserMsg(data);
