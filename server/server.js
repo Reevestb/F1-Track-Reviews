@@ -3,8 +3,8 @@ import pg from "pg";
 import cors from "cors";
 import dotenv from "dotenv";
 
-dotenv.config();
 const app = express();
+dotenv.config();
 app.use(express.json());
 app.use(cors());
 const dbConnectionString = process.env.DATABASE_URL;
@@ -18,6 +18,39 @@ app.listen(PORT, () => console.log(`server is running on ${PORT}`));
 
 app.get("/", function (request, response) {
   response.json({ message: "this is the root route. How roude!" });
+});
+
+app.get("/categoryItems", async (req, res) => {
+  const result = await db.query(`
+    SELECT * FROM categories
+    `);
+  res.json(result.rows);
+});
+
+app.get("/userMsg", async (req, res) => {
+  const result = await db.query(
+    `SELECT username, cat_name, message, id FROM messages`
+  );
+  res.json(result.rows);
+});
+
+app.post("/formInputs", async (req, res) => {
+  const { username, message, cat_name } = req.body;
+  // console.log("user_id", user_id);
+  // select the user_id from the db where the username is the one we get from body
+  // use THAT user_id in the below queries
+  try {
+    // await db.query(`INSERT into users (username) VALUES ($1 )`, [username]);
+    await db.query(
+      `INSERT into messages (username, message, cat_name) VALUES ($1, $2, $3)`,
+      [username, message, cat_name]
+    );
+    // await db.query(`INSERT into categories (cat_name) VALUES ($1)`, [cat_name]);
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error("No data is getting inserted", error);
+    res.status(500).json({ success: false });
+  }
 });
 
 //endpoints
