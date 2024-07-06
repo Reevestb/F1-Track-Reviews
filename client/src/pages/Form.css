@@ -1,0 +1,15 @@
+.form-image-box {
+  display: flex;
+  justify-content: center;
+}
+
+#formImg {
+  height: 65vh;
+  width: auto;
+}
+#user-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}

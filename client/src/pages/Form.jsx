@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./Form.css";
 
 export default function Form() {
   // we need useState to save the formData
@@ -54,9 +55,10 @@ export default function Form() {
 
   return (
     <>
+      <br />
       {/* /* need a form here with 2 events: one to submit, one to track changes */}
       {/* be consistent with how you name the attribute!!! the name you put in the database columns where the data is being stored  */}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="user-form">
         <label htmlFor="username">Name</label>
         <input
           type="text"
@@ -85,6 +87,7 @@ export default function Form() {
           <option value={formValues.cat_id}>Monaco - Monaco</option>
           <option value={formValues.cat_id}>Red Bull Ring - Austria</option> */}
         </select>
+        <br />
         <label htmlFor="">Message</label>
         <textarea
           name="message"
@@ -95,6 +98,14 @@ export default function Form() {
         ></textarea>
         <button type="submit"> Submit </button>
       </form>
+      <br />
+      <div className="form-img-box">
+        <img
+          id="formImg"
+          src="https://media.formula1.com/image/upload/t_16by9North/f_auto/q_auto/v1706626658/fom-website/2023/Miscellaneous/GettyImages-1656999898.jpg"
+          alt="F1 cars racing on track"
+        />
+      </div>
     </>
   );
 }

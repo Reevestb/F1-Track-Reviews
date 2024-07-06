@@ -27,6 +27,13 @@ app.get("/categoryItems", async (req, res) => {
   res.json(result.rows);
 });
 
+app.get("/trackNames", async (req, res) => {
+  const result = await db.query(`
+    SELECT * FROM categories
+    `);
+  res.json(result.rows);
+});
+
 app.get("/userMsg", async (req, res) => {
   const result = await db.query(
     `SELECT username, cat_name, message, id FROM messages`
