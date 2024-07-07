@@ -24,7 +24,7 @@ export default function FilterMsg() {
 
   return (
     <>
-      <div id="filterbtn">
+      <div id="filterbox">
         <select value={category.cat_name} onChange={changeFilter}>
           {category.map((item) => (
             <option
@@ -41,7 +41,9 @@ export default function FilterMsg() {
             {item.cat_name}
           </button>
         ))} */}
-        <button onClick={() => setFilter({})}>Clear Filter</button>
+        <button id="filterBtn" onClick={() => setFilter({})}>
+          Clear Filter
+        </button>
       </div>
     </>
   );

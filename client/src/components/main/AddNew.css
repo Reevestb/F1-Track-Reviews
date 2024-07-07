@@ -1,0 +1,38 @@
+#addBtn {
+  background-color: red;
+  color: white;
+  height: 3em;
+  width: auto;
+  border: none;
+  border-radius: 1em;
+  font-weight: 600;
+}
+#addBtn:hover {
+  background-color: red;
+  border: solid;
+  border-color: white;
+  border-radius: 1em;
+  cursor: pointer;
+  filter: drop-shadow(0 0 2em white);
+}
+
+#secretBtn:hover {
+  filter: drop-shadow(0 0 2em white);
+  text-decoration: underline solid 2px red;
+}
+
+#addForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+#addForm label {
+  font-size: 20px;
+  justify-content: center;
+}
+
+#trackInput {
+  width: 15rem;
+}

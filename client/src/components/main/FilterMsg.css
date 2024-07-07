@@ -1,5 +1,24 @@
-#filterbtn {
+#filterbox {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  padding-top: 1rem;
+}
+
+#filterBtn {
+  background-color: red;
+  color: white;
+  height: 3em;
+  width: auto;
+  border: none;
+  border-radius: 1em;
+  font-weight: 600;
+}
+#filterBtn:hover {
+  background-color: red;
+  border: solid;
+  border-color: white;
+  border-radius: 1em;
+  cursor: pointer;
+  filter: drop-shadow(0 0 2em white);
 }
