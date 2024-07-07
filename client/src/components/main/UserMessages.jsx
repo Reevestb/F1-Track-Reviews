@@ -11,7 +11,7 @@ export default function UserMessages({ username, cat_name, message, id }) {
       `https://week-7-assignment-client.onrender.com/deleteformdata/${id}` ||
         `http://localhost:7430/deleteformdata/${id}`,
       {
-        METHOD: "DELETE",
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
