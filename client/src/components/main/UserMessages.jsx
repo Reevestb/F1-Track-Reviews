@@ -22,7 +22,9 @@ export default function UserMessages({ username, cat_name, message, id }) {
       setMsgDelete(!msgDelete);
     }
   }
-
+  if (msgDelete) {
+    return null;
+  }
   return (
     <>
       <div className="userMsgBox" key={id}>
