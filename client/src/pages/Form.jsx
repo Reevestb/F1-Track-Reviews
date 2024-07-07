@@ -11,6 +11,7 @@ export default function Form() {
     username: "",
     message: "",
     cat_name: "",
+    id: 0,
   });
   const [category, setCategory] = useState([]);
 

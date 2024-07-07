@@ -5,7 +5,6 @@ import { useSearchParams } from "react-router-dom";
 import FilterMsg from "../components/main/FilterMsg";
 import "./Messages.css";
 
-// { username, cat_name, message }
 export default function Message() {
   //we need state to save the values of posts
   const [userMsg, setUserMsg] = useState([]);
@@ -50,6 +49,7 @@ export default function Message() {
                 username={item.username}
                 cat_name={item.cat_name}
                 message={item.message}
+                id={item.id}
               />
             );
           })}

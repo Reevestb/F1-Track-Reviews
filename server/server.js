@@ -87,11 +87,13 @@ app.post("/formInputs", async (req, res) => {
 // });
 
 //? DELETE examples - use dynamic url
-// app.delete("/deletFormData:id", async (req, res) => {
-//   const id = req.params.id;
-//   const result = await db.query(
-//     `DELETE FROM tablename WHERE id = $1 RETURNING * `,
-//     [id]
-//   );
-//   res.json(result.rows);
-// });
+app.delete("/deleteformdata/:id", async (req, res) => {
+  const msgId = req.params.id;
+  const result = await db.query(
+    `
+  DELETE FROM messages WHERE id = $1 RETURNING *
+  `,
+    [msgId]
+  );
+  res.json({ success: true });
+});
