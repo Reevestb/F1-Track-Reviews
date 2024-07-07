@@ -34,23 +34,33 @@ app.get("/trackNames", async (req, res) => {
   res.json(result.rows);
 });
 
+//? I had joined tables through the cat_name in both messages and categories but feel this wasn't correct as it didn't have a join sql
+// app.get("/userMsg", async (req, res) => {
+//   const result = await db.query(
+//     `SELECT username, cat_name, message, id FROM messages`
+//   );
+//   res.json(result.rows);
+// });
+
 app.get("/userMsg", async (req, res) => {
   const result = await db.query(
-    `SELECT username, cat_name, message, id FROM messages`
+    `SELECT messages.id, messages.username, messages.message, categories.cat_name FROM messages
+    JOIN
+    categories ON messages.cat_id = categories.id`
   );
   res.json(result.rows);
 });
 
 app.post("/formInputs", async (req, res) => {
-  const { username, message, cat_name } = req.body;
+  const { username, message, cat_id } = req.body;
   // console.log("user_id", user_id);
   // select the user_id from the db where the username is the one we get from body
   // use THAT user_id in the below queries
   try {
     // await db.query(`INSERT into users (username) VALUES ($1 )`, [username]);
     await db.query(
-      `INSERT into messages (username, message, cat_name) VALUES ($1, $2, $3)`,
-      [username, message, cat_name]
+      `INSERT into messages (username, message, cat_id) VALUES ($1, $2, $3)`,
+      [username, message, cat_id]
     );
     // await db.query(`INSERT into categories (cat_name) VALUES ($1)`, [cat_name]);
     res.status(200).json({ success: true });

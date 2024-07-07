@@ -18,19 +18,24 @@ export default function Form() {
     event.preventDefault();
     //prevent default to stop data going to url
     //something that Fetches the POST endpoint
-    fetch("https://week-7-assignment-client.onrender.com/formInputs", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formValues),
-    });
+    fetch(
+      // "https://week-7-assignment-client.onrender.com/formInputs" ||
+      "http://localhost:7430/formInputs",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      }
+    );
     console.log(formValues);
 
     setFormValues({
       username: "",
       message: "",
       cat_name: "",
+      cat_id: 0,
     });
   }
 
@@ -47,7 +52,8 @@ export default function Form() {
   useEffect(() => {
     async function fetchCategories() {
       const response = await fetch(
-        "https://week-7-assignment-client.onrender.com/categoryItems"
+        // "https://week-7-assignment-client.onrender.com/categoryItems" ||
+        "http://localhost:7430/categoryItems"
       );
       const category = await response.json();
       setCategory(category);
@@ -73,12 +79,12 @@ export default function Form() {
         <label htmlFor="cat_name">Track Name</label>
         <select
           required
-          value={formValues.cat_name}
+          value={formValues.cat_id}
           onChange={handleChange}
-          name="cat_name"
+          name="cat_id"
         >
           {category.map((item) => (
-            <option key={item.id} value={item.cat_name} required>
+            <option key={item.id} value={item.id} required>
               {item.cat_name}
             </option>
           ))}
