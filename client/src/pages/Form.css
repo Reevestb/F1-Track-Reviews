@@ -7,9 +7,37 @@
   height: 65vh;
   width: auto;
 }
+
 #user-form {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+
+#user-form label {
+  font-size: 20px;
+  justify-content: center;
+}
+
+#message-input {
+  width: 30rem;
+}
+
+#submit-button {
+  background-color: red;
+  color: white;
+  height: 3em;
+  border: none;
+  border-radius: 1em;
+  font-weight: 600;
+}
+
+#submit-button:hover {
+  background-color: red;
+  border: solid;
+  border-color: white;
+  border-radius: 1em;
+  cursor: pointer;
+  filter: drop-shadow(0 0 2em white);
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import UserMessages from "../components/main/UserMessages";
 import { useSearchParams } from "react-router-dom";
 import FilterMsg from "../components/main/FilterMsg";
+import "./Messages.css";
 
 // { username, cat_name, message }
 export default function Message() {
@@ -41,17 +42,18 @@ export default function Message() {
       <div>
         <FilterMsg />
         <h1> Previous Messages</h1>
-        {filterMsgs.map((item) => {
-          return (
-            <UserMessages
-              key={item.id}
-              username={item.username}
-              cat_name={item.cat_name}
-              message={item.message}
-            />
-          );
-        })}
-
+        <div id="left-messages">
+          {filterMsgs.map((item) => {
+            return (
+              <UserMessages
+                key={item.id}
+                username={item.username}
+                cat_name={item.cat_name}
+                message={item.message}
+              />
+            );
+          })}
+        </div>
         {/* i want to see a list of posts */}
         {/* conditional rendering: you can have a list of titles  */}
       </div>

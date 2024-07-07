@@ -75,13 +75,16 @@ export default function Form() {
           placeholder="Your Name Here"
           onChange={handleChange}
           required
+          id="name-input"
         />
+        <br />
         <label htmlFor="cat_name">Track Name</label>
         <select
           required
           value={formValues.cat_id}
           onChange={handleChange}
           name="cat_id"
+          id="category-select"
         >
           {category.map((item) => (
             <option key={item.id} value={item.id} required>
@@ -99,12 +102,16 @@ export default function Form() {
         <label htmlFor="">Message</label>
         <textarea
           name="message"
-          id="message"
+          id="message-input"
           placeholder="Your Message Here"
           value={formValues.message}
           onChange={handleChange}
+          // rows={2}
         ></textarea>
-        <button type="submit"> Submit </button>
+        <button type="submit" id="submit-button">
+          {" "}
+          Submit{" "}
+        </button>
       </form>
       <br />
       <div className="form-img-box">

@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS messages (
   "cat_name" TEXT,
   "message" TEXT,
   "cat_id" INTEGER,
-  FOREIGN KEY ("cat_name") REFERENCES categories ("cat_name")
+  FOREIGN KEY ("cat_id") REFERENCES categories ("id")
 );
 
 

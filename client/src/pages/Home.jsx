@@ -10,13 +10,15 @@
 // for user naviagtion, seperately, you will have link components
 // the link component has an attribute called to="" to specifiy the params we are navigating to
 import "./Home.css";
+import f1calender from "/Images/f1_calender.jpg";
 
 export default function TrackArt() {
   return (
     <div className="imgBox">
       <img
         id="img"
-        src="https://www.wallart.com/media/catalog/product/cache/5b18b93ddbe5d6592c6b175f41d24454/w/1/w12028-small_1_1.jpg"
+        src={f1calender}
+        // src="https://www.wallart.com/media/catalog/product/cache/5b18b93ddbe5d6592c6b175f41d24454/w/1/w12028-small_1_1.jpg"
         alt="F1 Calender"
       />
     </div>
