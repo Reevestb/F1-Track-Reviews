@@ -20,3 +20,28 @@
 .userMsgBox h3 {
   margin: 0;
 }
+
+#msgBtn {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+#delBtn {
+  background-color: red;
+  color: white;
+  height: 3em;
+  width: 6rem;
+  border: none;
+  border-radius: 1em;
+  font-weight: 600;
+}
+
+#delBtn:hover {
+  background-color: red;
+  border: solid;
+  border-color: white;
+  border-radius: 1em;
+  cursor: pointer;
+  filter: drop-shadow(0 0 2em white);
+}

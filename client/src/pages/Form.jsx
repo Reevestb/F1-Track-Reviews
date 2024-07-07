@@ -36,7 +36,6 @@ export default function Form() {
       username: "",
       message: "",
       cat_name: "",
-      cat_id: 0,
     });
   }
 

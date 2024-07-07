@@ -70,6 +70,17 @@ app.post("/formInputs", async (req, res) => {
   }
 });
 
+app.post("/newtrack", async (req, res) => {
+  const { cat_name } = req.body;
+  try {
+    await db.query(`INSERT into categories (cat_name) VALUES ($1)`, [cat_name]);
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error("failed to add new track", error);
+    res.status(500).json({ success: false });
+  }
+});
+
 //endpoints
 // Get enpoint --> we need to SELECT data from the database
 //POST endpoint --> we recieve the body from the client and we INSERT the body into the database.

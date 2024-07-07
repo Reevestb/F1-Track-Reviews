@@ -22,6 +22,7 @@ export default function UserMessages({ username, cat_name, message, id }) {
       setMsgDelete(!msgDelete);
     }
   }
+  //? Needed this if statement to make the delete instantaneous
   if (msgDelete) {
     return null;
   }
@@ -31,7 +32,11 @@ export default function UserMessages({ username, cat_name, message, id }) {
         <h2>Name: {username}</h2>
         <h3>Track: {cat_name}</h3>
         <p>Message: {message}</p>
-        <button onClick={deleteMsg}>🗑</button>
+        <div id="msgBtn">
+          <button id="delBtn" onClick={deleteMsg}>
+            DELETE
+          </button>
+        </div>
       </div>
     </>
   );
