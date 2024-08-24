@@ -1,9 +1,20 @@
 .navBar {
   display: flex;
   gap: 3rem;
+  font-size: 1.1rem;
+}
+.navBar :hover {
+  color: white;
 }
 
 #navBox {
   display: flex;
   justify-content: center;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
 }
