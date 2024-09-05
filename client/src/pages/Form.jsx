@@ -64,7 +64,6 @@ export default function Form() {
 
   return (
     <>
-      <br />
       {/* /* need a form here with 2 events: one to submit, one to track changes */}
       {/* be consistent with how you name the attribute!!! the name you put in the database columns where the data is being stored  */}
       <form onSubmit={handleSubmit} id="user-form">
@@ -78,7 +77,6 @@ export default function Form() {
           required
           id="name-input"
         />
-        <br />
         <label htmlFor="cat_name">Track Name</label>
         <select
           required
@@ -99,16 +97,18 @@ export default function Form() {
           <option value={formValues.cat_id}>Monaco - Monaco</option>
           <option value={formValues.cat_id}>Red Bull Ring - Austria</option> */}
         </select>
+        <br></br>
+        <label htmlFor="">Your Message</label>
         <br />
-        <label htmlFor="">Message</label>
         <textarea
           name="message"
           id="message-input"
           placeholder="Your Message Here"
           value={formValues.message}
           onChange={handleChange}
-          // rows={2}
+          // rows={5}
         ></textarea>
+        <br />
         <button type="submit" id="submit-button">
           {" "}
           Submit{" "}

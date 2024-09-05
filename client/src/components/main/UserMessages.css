@@ -45,3 +45,35 @@
   cursor: pointer;
   filter: drop-shadow(0 0 2em white);
 }
+
+/*! For phones */
+@media (width <= 768px) {
+  .userMsgBox p {
+    font-size: 18px;
+    margin-top: 0.5em;
+  }
+
+  .userMsgBox h2 {
+    margin: 0;
+  }
+
+  .userMsgBox h3 {
+    margin: 0;
+  }
+
+  #msgBtn {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.25rem;
+  }
+
+  #delBtn {
+    background-color: red;
+    color: white;
+    height: 2em;
+    width: 4rem;
+    border: none;
+    border-radius: 1em;
+    font-weight: 600;
+  }
+}

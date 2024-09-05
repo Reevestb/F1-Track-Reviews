@@ -4,33 +4,51 @@
 }
 
 #formImg {
-  height: 65vh;
-  width: auto;
+  max-height: auto;
+  max-width: 120vh;
 }
 
-#user-form {
+/* #user-form {
   display: flex;
   justify-content: center;
   flex-direction: row;
   gap: 0.5rem;
+} */
+
+#name-input {
+  margin-right: 1em;
+  height: 2em;
+  width: 18em;
 }
 
 #user-form label {
   font-size: 20px;
   justify-content: center;
+  height: 4em;
+  margin-right: 0.25em;
+}
+
+#category-select {
+  height: 2.75em;
+  width: auto;
 }
 
 #message-input {
-  width: 30rem;
+  width: 40rem;
+  height: 8em;
 }
 
 #submit-button {
   background-color: red;
   color: white;
-  height: 3em;
+  height: 2em;
+  width: 15em;
   border: none;
   border-radius: 1em;
   font-weight: 600;
+  margin-top: 0.75em;
+  font-size: 15px;
+  padding: 0;
 }
 
 #submit-button:hover {
@@ -40,4 +58,57 @@
   border-radius: 1em;
   cursor: pointer;
   filter: drop-shadow(0 0 2em white);
+}
+
+@media (width <= 768px) {
+  #user-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  #user-form label {
+    font-size: 20px;
+    justify-content: center;
+    height: 1.5em;
+  }
+
+  #submit-button {
+    background-color: red;
+    color: white;
+    height: 2em;
+    width: 10em;
+    border: none;
+    border-radius: 1em;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  #message-input {
+    max-width: 25em;
+    height: 6em;
+  }
+
+  #formImg {
+    max-height: auto;
+    max-width: 80vw;
+  }
+
+  #name-input {
+    height: 2em;
+    width: 20em;
+  }
+
+  #category-select {
+    height: 2em;
+    width: 20em;
+  }
+
+  br {
+    display: none;
+  }
 }
